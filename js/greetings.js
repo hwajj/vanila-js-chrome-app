@@ -12,18 +12,14 @@ function onLoginSubmit(event) {
   localStorage.setItem(USERNAME_KEY, username); //localstorage에 저장
   paintGreetings(username);
 }
-
 //입력한 이름 표출하고 입력창 가리기
 function paintGreetings(username) {
-  console.log(savedUsername);
   greeting.innerText = `Hello ${username}`;
-  console.log(greeting.innerHTML);
   greeting.classList.remove(HIDDEN_CLASSNAME);
-  console.log(greeting);
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
-console.log(savedUsername);
+//console.log(savedUsername);
 if (savedUsername === null) {
   //저장된게 없으면 가리는것 풀고 submit 이벤트리스너 걸어줌
   loginForm.classList.remove(HIDDEN_CLASSNAME);
